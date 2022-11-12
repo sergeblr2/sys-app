@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderMenuComponent } from "./components/header-menu/header-menu.component";
+import { HttpClientModule } from "@angular/common/http";
+import { SystemsListComponent } from "./components/systems-list/systems-list.component";
+import { ByService } from "./components/main/by.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderMenuComponent,
+    SystemsListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

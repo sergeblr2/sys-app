@@ -1,0 +1,72 @@
+<div class="m-2">
+  Hi! my template
+  <br>
+  {{ pc8 | json }}
+  <br>
+  id = {{ pc8.id }}
+  <br>
+  name = {{ pc8.name }}
+  <br><br>
+  PcAll:<br>
+  {{ pcAll | json }}
+  <br>
+  {{ pcAll[1].name }}
+<br><br>
+
+  <table class="table" style="border: 1px solid black">
+    <thead>
+    <tr style="border: 1px solid black">
+      <th style="border: 1px solid black">PC ID</th>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="border: 1px solid black" *ngFor = "let pc of pcAll">
+      <td style="border: 1px solid black"> {{ pc.id}}</td>
+      <td> {{ pc.name}}</td>
+      <td> {{ pc.level}}</td>
+      <td> {{ pc.status}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<br>
+<div>
+  <h2>Systems-list:</h2>
+  <br>
+  <h5>{{ pcs$.id }}</h5>
+  <h5>{{ pcs$.name }}</h5>
+  <h5>{{ pcs$.level }}</h5>
+  <h5>{{ pcs$.status }}</h5>
+
+  <br><br>
+  in json: {{ pcs$ | json }}
+</div>-->
+
+
