@@ -9,6 +9,7 @@ import { SystemsListComponent } from "./components/systems-list/systems-list.com
 import { ByService } from "./components/main/by.service";
 import {SystemComponent} from "./components/system-page/system.component";
 import {FormsModule} from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,11 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path: 'add-pc', component: SystemComponent},
+      {path: 'list-pcs', component: SystemsListComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
