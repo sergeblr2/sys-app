@@ -3,27 +3,25 @@ import {ByService} from "../main/by.service";
 import {IPc} from "../../models/system";
 
 @Component({
-  selector: 'systems-list-component',
-  templateUrl: 'systems-list.component.html'
+  selector: 'system-component',
+  templateUrl: 'system.component.html'
 })
 
-export class SystemsListComponent implements OnInit {
-  pc8: IPc;
-  pcAll: IPc[];
+export class SystemComponent implements OnInit {
+  pcCur: IPc;
   constructor(private getPcs: ByService) {
+  }
+
+  onPcFormSubmit(newPc: {pcName: string, pcLevel: number, pcStatus: string}) {
+    console.log(newPc);
   }
 
   ngOnInit(): void {
     // @ts-ignore
-    this.getPcs.getRequest().subscribe((data: IPc) => {
+/*    this.getPcs.getRequest().subscribe((data: IPc) => {
       console.log(data);
       this.pc8 = data;
-    })
-
-    // @ts-ignore
-    this.getPcs.getRequestAll().subscribe((data: IPc[]) => {
-      this.pcAll = data;
-    })
+    })*/
 
   }
 

@@ -1,3 +1,31 @@
+<div style="margin: 10px; border-radius: 10px; border: 1px solid #cccccc; overflow: hidden">
+  <table class="table" style="margin-bottom: 0rem;">
+    <thead>
+    <tr style="background: #dedede">
+      <th width="10%">PC id</th>
+      <th width="40%">Name</th>
+      <th width="10%">Level</th>
+      <th width="10%">Status</th>
+      <th width="30%">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="background: #fafafa" *ngFor="let pc of pcAll">
+      <td> {{ pc.id }}</td>
+      <td> {{ pc.name }}</td>
+      <td> {{ pc.level }}</td>
+      <td> {{ pc.status }}</td>
+      <td>
+        <button type="button" class="btn btn-sm" style="background: #f4d77f">Edit</button>&nbsp;
+        <button type="button" class="btn btn-sm" style="background: #f99a93">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!--
 <div class="m-2">
   Hi! my template
   <br>
@@ -12,29 +40,7 @@
   <br>
   {{ pcAll[1].name }}
 <br><br>
-
-  <table class="table" style="border: 1px solid black">
-    <thead>
-    <tr style="border: 1px solid black">
-      <th style="border: 1px solid black">PC ID</th>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr style="border: 1px solid black" *ngFor = "let pc of pcAll">
-      <td style="border: 1px solid black"> {{ pc.id}}</td>
-      <td> {{ pc.name}}</td>
-      <td> {{ pc.level}}</td>
-      <td> {{ pc.status}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-</div>
-
-
+-->
 
 
 

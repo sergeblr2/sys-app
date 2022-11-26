@@ -7,17 +7,21 @@ import { HeaderMenuComponent } from "./components/header-menu/header-menu.compon
 import { HttpClientModule } from "@angular/common/http";
 import { SystemsListComponent } from "./components/systems-list/systems-list.component";
 import { ByService } from "./components/main/by.service";
+import {SystemComponent} from "./components/system-page/system.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderMenuComponent,
-    SystemsListComponent
+    SystemsListComponent,
+    SystemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
