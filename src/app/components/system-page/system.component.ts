@@ -9,11 +9,12 @@ import {IPc} from "../../models/system";
 
 export class SystemComponent implements OnInit {
   pcCur: IPc;
-  constructor(private getPcs: ByService) {
+  constructor(private restService: ByService) {
   }
 
-  onPcFormSubmit(newPc: {pcName: string, pcLevel: number, pcStatus: string}) {
-    console.log(newPc);
+  onPcFormSubmit(newPc: IPc) {
+    console.log("onPcFormSubmit" + JSON.stringify(newPc));
+    this.restService.postRequest(newPc);
   }
 
   ngOnInit(): void {

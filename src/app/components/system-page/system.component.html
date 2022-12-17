@@ -1,9 +1,22 @@
-<form #pcForm="ngForm" (ngSubmit)="onPcFormSubmit(pcForm.value)">
-  <input type="text" name="pcName" ngModel>
-  <input type="number" name="pcLevel" ngModel>
-  <input type="text" name="pcStatus" ngModel>
-</form>
-Add new pc fields here...
+<div style="margin: 10px; border-radius: 10px; border: 1px solid #cccccc; overflow: hidden">
+  <form style="margin: 5px" #pcForm="ngForm" (ngSubmit)="onPcFormSubmit(pcForm.value)">
+    <div class="col-xs-3-">PC Name:
+      <input class="form-control" type="text" name="name" ngModel>
+    </div>
+    <div>Level:
+      <input type="number" name="level" ngModel>
+    </div>
+    <div>Status id:
+      <input type="text" name="status" ngModel>
+    </div>
+  </form>
+  <div style="margin: 10px; overflow: hidden">
+    <button (click)="onPcFormSubmit(pcForm.value)" type="button"
+            class="btn btn-sm" style="background: #a7d9f8"
+    >Add PC</button>&nbsp;
+  </div>
+</div>
+
 
 <!--
 <div class="m-2">
