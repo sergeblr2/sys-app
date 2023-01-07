@@ -8,7 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { SystemsListComponent } from "./components/systems-list/systems-list.component";
 import { ByService } from "./components/main/by.service";
 import {SystemComponent} from "./components/system-page/system.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 @NgModule({
@@ -23,6 +23,7 @@ import { RouterModule } from "@angular/router";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'add-pc', component: SystemComponent},
       {path: 'list-pcs', component: SystemsListComponent}
