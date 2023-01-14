@@ -1,5 +1,8 @@
 <div style="margin: 10px; border-radius: 10px; border: 1px solid #cccccc; overflow: hidden">
   <form [formGroup]="myForm" (ngSubmit)="onPcFormSubmit()" novalidate>
+    <div class="hidden">
+      <input class="form-control" type="text" formControlName="id">
+    </div>
     <div class="col-xs-3-">PC Name:
       <input class="form-control" type="text" formControlName="name">
     </div>

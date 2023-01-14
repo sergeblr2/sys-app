@@ -20,7 +20,8 @@ export class ByService {
     return this.httpClient.get("http://localhost:8080/rest/pcs");
   }
 
-  public postRequest(newPc: IPc ) {
+  //TODO: Replace 'any' with 'IPc' (and fix compatibility error)
+  public postRequest(newPc: any) {
     const httpOptions = {
       headers: new HttpHeaders(
         { 'Content-Type': 'application/json',

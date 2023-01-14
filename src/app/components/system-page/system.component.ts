@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {ByService} from "../main/by.service";
 import {IPc} from "../../models/system";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'system-component',
@@ -9,20 +9,22 @@ import {FormBuilder} from "@angular/forms";
 })
 
 export class SystemComponent implements OnInit {
-  pcCur: any;
+  //TODO: Replace 'any' with 'IPc' (and fix compatibility error in onPcFormSubmit())
+  pcToAdd: any;
   constructor(private restService: ByService, private fb: FormBuilder) {
   }
 
   myForm = this.fb.group({
+    id: 0,
     name: '',
-    status: '',
-    level: ''
+    level: 0,
+    status: ''
   });
-
+  // TODO: Learn fb.group working -> is it possible yo use IPc here as class or need to create IPc instamce with default values?
   onPcFormSubmit() {
-    this.pcCur = this.myForm.value;
-    console.log("onPcFormSubmit" + JSON.stringify(this.pcCur));
-    this.restService.postRequest(this.pcCur);
+    this.pcToAdd = this.myForm.value;
+    console.log("onPcFormSubmit" + JSON.stringify(this.pcToAdd));
+    this.restService.postRequest(this.pcToAdd);
   }
 
   ngOnInit(): void {
