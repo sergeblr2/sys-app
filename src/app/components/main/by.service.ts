@@ -10,9 +10,9 @@ export class ByService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getRequest() {
+  public getRequest(id: string | null) {
     //this.httpClient.post()
-    return this.httpClient.get("http://localhost:8080/rest/pcs/8");
+    return this.httpClient.get("http://localhost:8080/rest/pcs/" + id);
   }
 
   public getRequestAll() {

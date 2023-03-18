@@ -1,21 +1,30 @@
-<div style="margin: 10px; border-radius: 10px; border: 1px solid #cccccc; overflow: hidden">
+<div style="margin: 10px; padding: 5px; border-radius: 10px; border: 1px solid #cccccc; overflow: hidden">
   <form [formGroup]="myForm" (ngSubmit)="onPcFormSubmit()" novalidate>
+    <div [hidden] = "isEditPage">
+      <b>Add new PC</b>
+    </div>
+    <div [hidden] = "!isEditPage">
+      <b>Edit PC</b>
+    </div>
     <div class="hidden">
       <input class="form-control" type="text" formControlName="id">
     </div>
     <div class="col-xs-3-">PC Name:
-      <input class="form-control" type="text" formControlName="name">
+      <input class="form-control" style="margin: 3px; width: 150px" type="text" formControlName="name">
     </div>
     <div>Level:
-      <input type="number" formControlName="level" >
+      <input class="form-control" style="margin: 3px; width: 75px" type="number" formControlName="level" >
     </div>
     <div>Status id:
-      <input type="text" formControlName="status" >
+      <input class="form-control" style="margin: 3px; width: 75px" type="text" formControlName="status" >
     </div>
     <div style="margin: 10px; overflow: hidden">
-      <button  type="submit"
+      <button [hidden] = "isEditPage" type="submit"
                class="btn btn-sm" style="background: #a7d9f8"
       >Add PC</button>
+      <button [hidden] = "!isEditPage" type="submit"
+               class="btn btn-sm" style="background: #beffa5"
+      >Save</button>
     </div>
   </form>
 

@@ -24,10 +24,7 @@ import { RouterModule } from "@angular/router";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {path: 'add-pc', component: SystemComponent},
-      {path: 'list-pcs', component: SystemsListComponent}
-    ])
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
